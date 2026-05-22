@@ -1,23 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Hanken_Grotesk } from "next/font/google";
 
 import "../index.css";
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import Providers from "@/components/providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  display: "swap",
+  axes: ["opsz", "SOFT", "WONK"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "my-better-t-app",
-  description: "my-better-t-app",
+  title: "Riverbend Health Collective — Book an appointment",
+  description:
+    "Physiotherapy and chiropractic care at Riverbend Health Collective. Book online with our practitioners.",
 };
 
 export default function RootLayout({
@@ -27,11 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${fraunces.variable} ${hanken.variable} antialiased`}>
         <Providers>
-          <div className="grid grid-rows-[auto_1fr] h-svh">
+          <div className="grid min-h-svh grid-rows-[auto_1fr_auto]">
             <Header />
-            {children}
+            <main>{children}</main>
+            <Footer />
           </div>
         </Providers>
       </body>
