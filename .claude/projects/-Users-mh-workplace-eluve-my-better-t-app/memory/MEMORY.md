@@ -1,0 +1,2 @@
+- [Drizzle error cause chain](drizzle-error-cause-chain.md) — pg SQLSTATE is on err.cause, not err.code (drizzle 0.45)
+- [oRPC typed error in catch](orpc-typed-error-catch.md) — isDefinedError collapses to never in catch; use instanceof ORPCError
