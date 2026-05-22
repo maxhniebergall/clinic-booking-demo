@@ -7,6 +7,12 @@ export const user = pgTable("user", {
   email: text("email").notNull().unique(),
   emailVerified: boolean("email_verified").default(false).notNull(),
   image: text("image"),
+  // "patient" (default) or "clinician". Surfaced to Better Auth via
+  // user.additionalFields in packages/auth so it rides along on the session.
+  role: text("role")
+    .$type<"patient" | "clinician">()
+    .default("patient")
+    .notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at")
     .defaultNow()
