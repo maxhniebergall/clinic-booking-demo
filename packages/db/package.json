@@ -13,7 +13,9 @@
     "db:push": "drizzle-kit push",
     "db:generate": "drizzle-kit generate",
     "db:studio": "drizzle-kit studio",
-    "db:migrate": "drizzle-kit migrate"
+    "db:migrate": "drizzle-kit migrate",
+    "db:booking-constraints": "node --experimental-strip-types src/migrate-booking-constraints.ts",
+    "db:seed": "node --experimental-strip-types src/seed.ts"
   },
   "dependencies": {
     "@my-better-t-app/env": "workspace:*",
