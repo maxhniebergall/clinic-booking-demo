@@ -2,10 +2,6 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Layout note
-
-The git repository and all code live in `my-better-t-app/` (a sibling of this parent workspace). Run all commands below from `my-better-t-app/`.
-
 ## Commands
 
 Package manager is **pnpm** (v9.15) with Turborepo. Run from the repo root:
